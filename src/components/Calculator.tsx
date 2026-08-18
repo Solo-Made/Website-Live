@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import AnimatedNumber from "@/components/AnimatedNumber";
 
 const HOURLY_RATE = 50;
-const SUBSCRIPTION_COST_PER_MONTH = 35;
 
 const Calculator = () => {
   const [offertes, setOffertes] = useState(2);
@@ -11,16 +10,16 @@ const Calculator = () => {
   // Berekening:
   // • Tijdwinst per maand (min): offertes × 90 × 0.60
   // • Tijdwinst per maand (uur): / 60
-  // • Geldbesparing per maand: tijdwinst × €50
-  // • Netto besparing per maand: geldbesparing − abonnementskosten
+  // • Tijdwinst per jaar (uur): × 12
+  // • Besparing per jaar: die uren × €50
+  //
+  // De abonnementskosten gingen hier eerst vanaf. Dat stond nergens en het
+  // leest ook niet zo: onder het bedrag staat het aantal bespaarde uren, en
+  // die twee hoorden niet bij elkaar te rekenen.
   const totalTimeWinMinutes = offertes * 90 * 0.6;
   const timeWinHours = Math.round((totalTimeWinMinutes / 60) * 10) / 10;
-  const moneySaving = timeWinHours * HOURLY_RATE;
-  const nettoSavingPerMonth = Math.round(
-    moneySaving - SUBSCRIPTION_COST_PER_MONTH,
-  );
-  const yearlySaving = nettoSavingPerMonth * 12;
   const yearlyHours = Math.round(timeWinHours * 12 * 10) / 10;
+  const yearlySaving = Math.round(yearlyHours * HOURLY_RATE);
 
   return (
     <section className="py-16 lg:py-24 bg-calcuu-background overflow-x-hidden">
