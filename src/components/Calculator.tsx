@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import AnimatedNumber from "@/components/AnimatedNumber";
 
 const HOURLY_RATE = 50;
-const SUBSCRIPTION_COST_PER_MONTH = 45;
+const SUBSCRIPTION_COST_PER_MONTH = 35;
 
 const Calculator = () => {
   const [offertes, setOffertes] = useState(2);

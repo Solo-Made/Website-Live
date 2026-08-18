@@ -886,10 +886,10 @@ const Home = () => {
       </section>
       <Calculator />
 
-      {/* Pricing Section — Launch promo */}
+      {/* Pricing Section */}
       {(() => {
-        const LAUNCH_PRICE = 15;
-        const LAUNCH_YEARLY = LAUNCH_PRICE * 12;
+        const MONTHLY_PRICE = 35;
+        const YEARLY_PRICE = 300;
 
         return (
           <section id="pricing" className="py-16 lg:py-24 bg-gray-50">
@@ -897,11 +897,10 @@ const Home = () => {
               {/* Header */}
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-calcuu-secondary mb-4">
-                  Tijdelijke lanceringsactie
+                  Prijzen
                 </h2>
                 <p className="text-lg text-calcuu-text-sub max-w-2xl mx-auto">
-                  Start nu voordelig met Calcuu en bespaar het eerste jaar op
-                  je abonnement.
+                  Eén abonnement, alles inbegrepen.
                 </p>
               </div>
 
@@ -912,22 +911,20 @@ const Home = () => {
                   <div className="text-center mb-2">
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-6xl font-bold text-calcuu-secondary font-mono tabular-nums">
-                        €{LAUNCH_PRICE}
+                        €{MONTHLY_PRICE}
                       </span>
                       <span className="text-xl text-calcuu-text-sub">
                         / maand
                       </span>
                     </div>
                     <p className="text-sm text-calcuu-text-sub mt-2">
-                      Jaarlijks gefactureerd • €{LAUNCH_YEARLY} per jaar
+                      excl. btw
+                    </p>
+                    <p className="text-sm text-calcuu-text-sub mt-2">
+                      of €{YEARLY_PRICE} per jaar, jaarlijks gefactureerd —
+                      excl. btw
                     </p>
                   </div>
-
-                  {/* Kleine tekst */}
-                  <p className="text-center text-sm text-calcuu-text-sub mt-6 px-4 leading-relaxed">
-                    Na het eerste jaar wordt automatisch het standaardtarief
-                    toegepast.
-                  </p>
 
                   <hr className="border-gray-200 my-6" />
 
