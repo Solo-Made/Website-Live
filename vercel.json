@@ -1,40 +1,66 @@
 {
-    "rewrites": [
-          {
-                  "source": "/privacy",
-                  "destination": "/index.html"
-          },
-          {
-                  "source": "/",
-                  "destination": "/index.html"
-          },
-          {
-                  "source": "/((?!sitemap\\.xml|robots\\.txt|signup/).*)",
-                  "destination": "/index.html"
-          }
-    ],
-    "headers": [
-          {
-                  "source": "/sitemap.xml",
-                  "headers": [
-                            {
-                                        "key": "Content-Type",
-                                        "value": "application/xml; charset=utf-8"
-                            },
-                            {
-                                        "key": "Cache-Control",
-                                        "value": "public, max-age=86400"
-                            }
-                  ]
-          },
-          {
-                  "source": "/robots.txt",
-                  "headers": [
-                            {
-                                        "key": "Content-Type",
-                                        "value": "text/plain; charset=utf-8"
-                            }
-                  ]
-          }
-    ]
+  "redirects": [
+    {
+      "source": "/app",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(iPhone|iPad|iPod).*"
+        }
+      ],
+      "destination": "https://apps.apple.com/nl/app/calcuu/id1609226426",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*Android.*"
+        }
+      ],
+      "destination": "https://play.google.com/store/apps/details?id=com.calcuu.calcuu",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/privacy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/((?!sitemap\\.xml|robots\\.txt|signup/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    }
+  ]
 }
